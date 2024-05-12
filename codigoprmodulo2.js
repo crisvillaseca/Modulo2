@@ -6,8 +6,8 @@ class Encuesta {
     }
   
     votar(opcionIndex) {
-      if (opcionIndex >= 0 && opcionIndex < this.opciones.length) {
-        this.votos[opcionIndex]++;
+      if (opcion >= 0 && opcion < this.opciones.length) {
+        this.votos[opcion]++;
         return true;
       } else {
         return false;
@@ -30,22 +30,22 @@ class Encuesta {
     return encuesta;
   }
   
-  function votarEnEncuesta(encuestaIndex, opcionIndex) {
-    if (encuestaIndex >= 0 && encuestaIndex < encuestas.length) {
-      return encuestas[encuestaIndex].votar(opcionIndex);
+  function votarEncuesta(encuesta, opcion) {
+    if (encuesta >= 0 && encuesta < encuestas.length) {
+      return encuestas[encuesta].votar(opcion);
     } else {
       return false;
     }
   }
   
-  function mostrarResultados(encuestaIndex) {
-    if (encuestaIndex >= 0 && encuestaIndex < encuestas.length) {
-      const resultados = encuestas[encuestaIndex].obtenerResultados();
-      console.log(`Resultados de la encuesta: ${encuestas[encuestaIndex].pregunta}`);
+  function mostrarResultados(encuesta) {
+    if (encuesta >= 0 && encuesta < encuestas.length) {
+      const resultados = encuestas[encuesta].obtenerResultados();
+      console.log(`Resultados de la encuesta: ${encuestas[encuesta].pregunta}`);
       resultados.forEach((resultado, index) => {
         console.log(`${index + 1}. ${resultado.opcion}: ${resultado.votos} votos`);
       });
     } else {
-      console.log("Encuesta no encontrada");
+      console.log("La encuesta no ha sido creada.");
     }
   }
