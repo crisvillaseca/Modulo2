@@ -87,7 +87,7 @@ La funcion `mostrarResultados` muestra los resultados de una encuesta específic
     }
   }
 ```
-##Codigo completo
+## Codigo completo
 ```ruby
 class Encuesta {
     constructor(pregunta, opciones) {
